@@ -1,0 +1,52 @@
+.container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+}
+
+.logo
+{
+    display: flex;
+    align-items: center;
+}
+
+.logo img
+{
+    height: 4rem;
+}
+
+.logo h1
+{
+    margin-left: 1rem;
+    font-family: 'FOT-Seurat Pro B';
+    font-size: 1.5rem;
+}
+
+.navItem
+{
+    display: inline-block;
+    padding: 0 2rem;
+}
+
+.hover
+{
+    width: 85%;
+    height: 10px;
+    margin: -0.75rem auto 0 auto;
+    border-radius: 20px;
+    background-color: #F7D359;
+    opacity: 0;
+}
+
+.navItem a
+{
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+.navItem a:hover ~ .hover
+{
+    opacity: 1;
+}

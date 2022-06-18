@@ -1,0 +1,168 @@
+.section
+{
+    width: 50%;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s all ease;
+}
+
+.header
+{
+    height: 50px;
+    width: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s all ease;
+}
+
+.header:hover
+{
+    cursor: pointer;
+}
+
+.header h1
+{
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.searchWrapper
+{
+    display: flex;
+}
+
+input
+{
+    border: none;
+    background-color: #F8EEBB;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+}
+
+::placeholder
+{
+    color: #786A50;
+}
+
+.image
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconify
+{
+    height: 1.5rem;
+    margin-right: 1rem;
+    color: #786A50;
+}
+
+.iconify:hover
+{
+    cursor: pointer;
+}
+
+.row
+{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+}
+
+#names
+{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+}
+
+#names h1
+{
+    color: #786A50;
+    font-size: 0.85rem;
+}
+
+.sea
+{
+    background-color: #FEF8FF;
+}
+
+.seaArrow
+{
+    stroke: #F2D7F6;
+    transform: rotate(180deg);
+    margin-right: 1rem;
+}
+
+.fish
+{
+    background-color: #F6FEFF;
+}
+
+.fishArrow
+{
+    stroke: #BDE9F2;
+    transform: rotate(180deg);
+    margin-right: 1rem;
+}
+
+.bug
+{
+    background-color: #F2FFF7;
+}
+
+.bugArrow
+{
+    stroke: #CCF4DB;
+    transform: rotate(180deg);
+    margin-right: 1rem;
+}
+
+.fossil
+{
+    background-color: #F3F6FF;
+}
+
+.fossilArrow
+{
+    stroke: #D0D9F9;
+    transform: rotate(180deg);
+    margin-right: 1rem;
+}
+
+.open .arrow
+{
+    transform: rotate(0deg);
+}
+
+.open .sea
+{
+    background-color: #FCECFF;
+}
+
+.open .fish
+{
+    background-color: #E2FCFF;
+}
+
+.open .bug
+{
+    background-color: #E2FFED;
+}
+
+.open .fossil
+{
+    background-color: #E7EDFF;
+}
+
+.hide
+{
+    display: none;
+    transition: 0.3s all ease;
+}

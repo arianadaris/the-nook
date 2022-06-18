@@ -1,0 +1,36 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image
+{
+    display: flex;
+    justify-content: center;
+}
+
+.image img
+{
+    height: 16rem;
+}
+
+.text
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.text h1
+{
+    font-family: 'FOT-Seurat Pro B';
+}
+
+.text h3
+{
+    font-size: 1rem;
+    margin-top: -1.5rem;
+}

@@ -1,0 +1,79 @@
+.container
+{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 2rem auto;
+}
+
+.image
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.image img
+{
+    height: 10rem;
+}
+
+.text
+{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.text h1
+{
+    font-size: 1.2rem;
+    font-family: 'FOT-Seurat Pro B';
+}
+
+.text h2
+{
+    font-size: 1rem;
+    text-align: left;
+    width: 80%;
+}
+
+.buttonWrapper
+{
+    width: fit-content;
+    background-color: #F8EEBB;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: 'FOT-Seurat Pro B';
+}
+
+.buttonWrapper a
+{
+    color: #786A50;
+    position: relative;
+    z-index: 2;
+}
+
+.hover
+{
+    width: 90%;
+    height: 10px;
+    margin: -0.75rem auto 0 auto;
+    border-radius: 20px;
+    background-color: #F7D359;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.buttonWrapper:hover
+{
+    cursor: pointer;
+}
+
+.buttonWrapper:hover > .hover
+{
+    opacity: 1;
+}

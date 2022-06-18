@@ -1,0 +1,103 @@
+.container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.container h1
+{
+    text-align: center;
+}
+
+.container h3
+{
+    text-align: center;
+    
+}
+
+#tagline
+{
+    margin-top: -1.5rem;
+}
+
+.cardsWrapper
+{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 2rem 0;
+}
+
+.card
+{
+    width: 20%;
+    padding-bottom: 2rem;
+    border-radius: 20px;
+    margin: 0 1rem;
+}
+
+.title
+{
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    transform: rotate(-5deg);
+    margin-top: -2rem;
+    margin-left: -1rem;
+    color: #786A50;
+}
+
+.card .image
+{
+    display: flex;
+    justify-content: center;
+}
+
+.card img
+{
+    height: 5rem;
+    margin-bottom: 2rem;
+}
+
+#sea
+{
+    background-color: #FEF8FF;
+}
+
+#seaTitle
+{
+    background-color: #F2D7F6;
+}
+
+#fish
+{
+    background-color: #F6FEFF;
+}
+
+#fishTitle
+{
+    background-color: #BDE9F2;
+}
+
+#bug
+{
+    background-color: #F2FFF7;
+}
+
+#bugTitle
+{
+    background-color: #CCF4DB;
+}
+
+#fossil
+{
+    background-color: #F3F6FF;
+}
+
+#fossilTitle
+{
+    background-color: #D0D9F9;
+}

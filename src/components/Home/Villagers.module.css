@@ -1,0 +1,79 @@
+.container
+{
+    text-align: center;
+    background-color: #FFF9E6;
+    border-radius: 0 0 50px 50px;
+    width: 100%;
+    height: fit-content;
+    margin: -1.5rem 0 0 0;
+    padding-bottom: 1rem;
+}
+
+.container h1
+{
+    font-family: 'FOT-Seurat Pro B';
+    padding-top: 2rem;
+    color: #786A50;
+}
+
+.container h2
+{
+    text-align: center;
+    width: 100%;
+    margin-top: -1rem;
+}
+
+.cardsWrapper
+{
+    display: flex;
+    justify-content: center;
+}
+
+.card
+{
+    margin: 0 1rem 1rem 1rem;
+}
+
+.card img
+{
+    height: 5rem;
+}
+
+.buttonWrapper
+{
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #F8EEBB;
+    padding: 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+.buttonWrapper a
+{
+    color: #786A50;
+    position: relative;
+    z-index: 2;
+}
+
+.hover
+{
+    width: 75%;
+    height: 10px;
+    margin: -0.75rem auto 0 auto;
+    border-radius: 20px;
+    background-color: #F7D359;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.buttonWrapper:hover
+{
+    cursor: pointer;
+}
+
+.buttonWrapper:hover > .hover
+{
+    opacity: 1;
+}

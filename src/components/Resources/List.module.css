@@ -1,0 +1,75 @@
+.container
+{
+    width: 100%;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.section
+{
+    width: 50%;
+    margin: 0 auto 1rem auto;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s all ease;
+}
+
+.row
+{
+    height: 50px;
+    width: 100%;
+    background-color: #CCF4DB;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s all ease;
+}
+
+.row h1
+{
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+#arrow
+{
+    transform: rotate(180deg);
+    height: 1rem;
+    margin-right: 1rem;
+}
+
+.open
+{
+    background-color: #AADEBE;
+    transition: 0.3s all ease;
+}
+
+.open #arrow
+{
+    transform: rotate(0deg);
+}
+
+.row:hover
+{
+    cursor: pointer;
+}
+
+.section a
+{
+    padding-left: 2rem;
+    width: fit-content;
+}
+
+.section a:hover
+{
+    text-decoration: underline;
+}
+
+.hide
+{
+    display: none;
+    transition: 0.3s all ease;
+}

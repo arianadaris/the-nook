@@ -1,0 +1,87 @@
+.container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem 1.5rem 2rem;
+}
+
+.logoWrapper
+{
+    display: flex;
+    width: 25%;
+}
+
+.logoWrapper h1
+{
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+#logo
+{
+    height: 4rem;
+}
+
+h2
+{
+    font-size: 1rem;
+    color: #A89E8C;
+    text-align: center;
+    width: 50%;
+}
+
+.buttonWrapper
+{
+    display: flex;
+    width: 25%;
+}
+
+.socialButtons
+{
+    margin-right: 1rem;
+}
+
+.iconify
+{
+    color: white;
+    background-color: pink;
+    padding: 0.85rem 0.65rem;
+    border-radius: 50px;
+    height: 1.5rem;
+    margin: 0 1rem;
+}
+
+#arrow
+{
+    background-color: #F7D359;
+    padding: 0.975rem 0.75rem;
+    border-radius: 50px;
+    height: 1.25rem;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin-right: 2rem;
+    margin-bottom: 2.1rem;
+}
+
+#github
+{
+    background-color: #FEBDC3;
+}
+
+#instagram
+{
+    background-color: #8ECFC9;
+}
+
+#linkedin
+{
+    background-color: #88C9A1;
+}
+
+.iconify:hover, #arrow:hover
+{
+    transform: scale(1.075);
+    cursor: pointer;
+}
