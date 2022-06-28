@@ -15,16 +15,14 @@
 <p>With this project, I was able to learn about APIs and how to parse and manipulate the JSON files REST APIs return. I feel more comfortable with APIs and handling the data I receive from other services to complete my project. I love that I was able to find a way to combine my love for coding with my love for the Animal Crossing game series!</p>
 
 <h4>Impact</h4>
-  • Allows users to search through lists of data easily by entering name, species, or location<br>
-  • Offers filters for users who want to view specific categories of items or villagers<br>
-  • Lists links to other frequently-visited Animal Crossing related websites for easy accessibility<br>
+  • With the search and filter features, users spend less time looking for information and more time enjoying the game<br>
+  • The Resources page makes finding other Animal Crossing content easy and convenient<br>
 
 <h4>Features</h4>
   • Populates data using <a href="http://acnhapi.com/">Animal Crossing New Horizons API</a><br>
-  • Allows players to search and filter through lists of villagers and museum items<br>
+  • Allows players to search through lists using name, species, or location keywords<br>
   • Shows details and images about every fish, bug, fossil or villager<br>
-  • Tracks which items the player has caught or dug up with the checkmark feature<br>
-
+  • Introduces filters for users who are looking for specific categories of items or villagers<br>
 <h1></h1>
 
 <h4>Project Images</h4>
