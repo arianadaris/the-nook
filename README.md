@@ -5,7 +5,7 @@
 <h1 align="center">The Nook<br>
   <a href="http://thenook.arianadaris.com/" target="_blank"><img src="https://img.shields.io/badge/View Website-informational?style=flat&logo=java&logoColor=white&color=007C74" /></a>
   <a href="http://www.arianadaris.com/work/the-nook" target="_blank"><img src="https://img.shields.io/badge/Read About Project-informational?style=flat&logo=java&logoColor=white&color=007C74" /></a>
-  <a href="http://www.github.com/arianadaris/the-nook/" target="_blank"><img src="https://img.shields.io/badge/View Prototype-informational?style=flat&logo=java&logoColor=white&color=007C74" /></a>
+  <a href="https://www.figma.com/file/EidEBC7pvg0nDUnJze5NJb/The-Nook?node-id=0%3A1" target="_blank"><img src="https://img.shields.io/badge/View Prototype-informational?style=flat&logo=java&logoColor=white&color=007C74" /></a>
   <a href="https://dribbble.com/shots/18566874-The-Nook-Animal-Crossing-Tribute-Project" target="_blank"><img src="https://img.shields.io/badge/View Dribbble-informational?style=flat&logo=java&logoColor=white&color=007C74" /></a>
 </h1>
 
