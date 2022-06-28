@@ -1,0 +1,86 @@
+[
+    {
+        "value": 1,
+        "label": "Flying"
+    },
+    {
+        "value": 2,
+        "label": "On rotten food"
+    },
+    {
+        "value": 3,
+        "label": "On trees"
+    },
+    {
+        "value": 4,
+        "label": "Shaking trees"
+    },
+    {
+        "value": 5,
+        "label": "On the ground"
+    },
+    {
+        "value": 6,
+        "label": "On palm trees"
+    },
+    {
+        "value": 7,
+        "label": "Hitting rocks"
+    },
+    {
+        "value": 8,
+        "label": "On tree stumps"
+    },
+    {
+        "value": 9,
+        "label": "On ponds and rivers"
+    },
+    {
+        "value": 10,
+        "label": "Flying (near water)"
+    },
+    {
+        "value": 11,
+        "label": "On villagers"
+    },
+    {
+        "value": 12,
+        "label": "Near trash"
+    },
+    {
+        "value": 13,
+        "label": "On the beach"
+    },
+    {
+        "value": 14,
+        "label": "On flowers"
+    },
+    {
+        "value": 15,
+        "label": "Underground"
+    },
+    {
+        "value": 16,
+        "label": "Flying by light"
+    },
+    {
+        "value": 17,
+        "label": "On white flowers"
+    },
+    {
+        "value": 18,
+        "label": "Flying near hybrid flowers"
+    },
+    {
+        "value": 19,
+        "label": "On rocks and bush (when raining)"
+    },
+    {
+        "value": 20,
+        "label": "Under trees"
+    },
+    {
+        "value": 21,
+        "label": "On beach rocks"
+    }
+]

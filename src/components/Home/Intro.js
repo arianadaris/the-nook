@@ -10,10 +10,10 @@ function Intro()
         <div className={styles.container}>
             <div className={styles.text}>
                 <h1>The one stop shop for all things Animal Crossing.</h1>
-                <div className={styles.buttonWrapper}>
-                    <a href="/about">Learn more!</a>
+                <a href="/about" className={styles.buttonWrapper}>
+                    <h1>Learn more!</h1>
                     <div className={styles.hover} />
-                </div>
+                </a>
             </div>
             <div className={styles.imageWrapper}>
                 <img src={NooksCranny} id={styles.nooksCranny} alt="Nook's Cranny" />

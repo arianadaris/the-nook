@@ -1,0 +1,100 @@
+.container
+{
+    height: fit-content;
+    width: 100%;
+    background-image: url('../../assets/Background_NookLeaf.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50px;
+    padding: 2rem 0 4rem 0;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.suggestionWrapper
+{
+    width: 50%;
+}
+
+.suggestionWrapper h1
+{
+    font-size: 1.25rem;
+    font-family: 'FOT-Seurat Pro B';
+}
+
+.suggestionWrapper h2
+{
+    font-size: 1rem;
+    color: #393223;
+    width: 100%;
+    text-align: left;
+    margin-top: -1rem;
+}
+
+.buttonsWrapper
+{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.buttonWrapper
+{
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #F8EEBB;
+    padding: 0 1rem 1.25rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: 'FOT-Seurat Pro B';
+}
+
+.buttonWrapper h1
+{
+    color: #786A50;
+    position: relative;
+    z-index: 2;
+    font-size: 1.25rem;
+}
+
+.hover
+{
+    width: 75%;
+    height: 10px;
+    margin: -1.75rem auto 0 auto;
+    border-radius: 20px;
+    background-color: #F7D359;
+    opacity: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.buttonWrapper:hover
+{
+    cursor: pointer;
+}
+
+.buttonWrapper:hover > .hover
+{
+    opacity: 1;
+}
+
+.buttonsWrapper input
+{
+    border: none;
+    background-color: white;
+    border-radius: 50px;
+    height: fit-content;
+    padding: 1.25rem 1.5rem 1.25rem 1.5rem;
+    width: 70%;
+    font-family: 'FOT-Seurat Pro';
+}
+
+.buttonsWrapper input[type=text]:focus
+{
+    outline: 2px solid #70C7C1;
+}

@@ -27,8 +27,8 @@ function Footer()
                     <a href="https://github.com/arianadaris" target="_blank" rel="noreferrer">
                         <span className={`${'iconify'} ${styles.iconify}`} id={styles.github} data-icon="akar-icons:github-fill" data-width="32"></span>
                     </a>
-                    <a href="https://www.instagram.com/arianadaris/" target="_blank" rel="noreferrer">
-                        <span className={`${'iconify'} ${styles.iconify}`} id={styles.instagram} data-icon="akar-icons:instagram-fill" data-width="32"></span>
+                    <a href="https://dribbble.com/arianadaris" target="_blank" rel="noreferrer">
+                        <span className={`${'iconify'} ${styles.iconify}`} id={styles.dribbble} data-icon="akar-icons:dribbble-fill" data-width="32"></span>
                     </a>
                     <a href="https://www.linkedin.com/in/ariana-rajewski/" target="_blank" rel="noreferrer">
                         <span className={`${'iconify'} ${styles.iconify}`} id={styles.linkedin} data-icon="akar-icons:linkedin-fill" data-width="32"></span>

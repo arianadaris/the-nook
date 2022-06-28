@@ -1,19 +1,57 @@
 import React from 'react';
-import $ from 'jquery';
+import Select from 'react-select';
 
 import styles from './List.module.css';
 
+import Loader from '../../assets/Loader.gif';
 
-class Row
+import Name from '../../assets/Home_SearchName.png';
+import Species from '../../assets/Home_SearchSpecies.png';
+import Personality from '../../assets/Home_SearchPersonality.png';
+
+import speciesOptions from '../../data/Species.json';
+import personalitiesOptions from '../../data/Personalities.json';
+
+class Villager
 {
-    constructor(name, species, html)
+    constructor(image, name, species, personality, birthday, catchPhrase)
     {
+        this.image = image;
         this.name = name;
         this.species = species;
-        this.html = html;
+        this.personality = personality;
+        this.birthday = birthday;
+        this.catchPhrase = catchPhrase;
     }
 }
 
+class Row
+{
+    constructor(villager)
+    {
+        this.villager = villager;
+        this.html = this.createHTML();
+
+        this.createHTML.bind(this);
+    }
+
+    createHTML()
+    {
+        // Create an HTML row element with proper formating
+        return(
+            <div className={`${styles.row}`}>
+                <div src={styles.image}>
+                    <img src={this.villager.image} alt={this.villager.name} style={{'--color': "#FFF9E6"}} />
+                </div>
+                <h1>{this.villager.name}</h1>
+                <h1>{this.villager.species}</h1>
+                <h1>{this.villager.personality}</h1>
+                <h1>{this.villager.birthday}</h1>
+                <h1>"{this.villager.catchPhrase}"</h1>
+            </div>
+        )
+    }
+}
 
 class List extends React.Component
 {
@@ -21,193 +59,314 @@ class List extends React.Component
     {
         super();
         this.state = {
-            color: '#FFF9E6',
-            data: [],
-            rows: [],
-            found: []
-        }
+            isLoaded: false,
+            APIData: [],
+            results: [],
+            filteredResults: [],
+            speciesValue: "Species",
+            personalityValue: "Personality"
+        };
 
+        // Select component styling
+        this.customStyle = {
+            control: () => ({
+                backgroundColor: '#F8EEBC',
+                borderRadius: '50px',
+                padding: '0.25rem, 0.5rem',
+                display: 'flex',
+                color: '#393223',
+                fontFamily: 'FOT-Seurat Pro B',
+                fontSize: '0.85rem'
+            }),
+            indicatorSeparator: () => ({
+                display: 'none'
+            }),
+            multiValue: () => ({
+                backgroundColor: '#fcf7e8',
+                borderRadius: '25px',
+                padding: '0.25rem 0.5rem',
+                color: '#393223',
+                fontFamily: 'FOT-Seurat Pro B',
+                fontSize: '0.85rem',
+                display: 'flex'
+            }),
+        };
+
+        // Manipulate API data function
         this.manipulateData.bind(this);
-        this.createRow.bind(this);
-        this.search.bind(this);
-        this.sortByName.bind(this);
-        this.sortBySpecies.bind(this);
+
+        // Search and Filter functions
+        this.toggleFilter.bind(this);
+        this.search = this.search.bind(this);
+        this.filter = this.filter.bind(this);
+        this.clearAll = this.clearAll.bind(this);
+
+        // Sort functions
+        this.sortByName = this.sortByName.bind(this);
+        this.sortBySpecies = this.sortBySpecies.bind(this);
+        this.sortByPersonalities = this.sortByPersonalities.bind(this);
     }
 
     componentDidMount()
-    { 
-        // Get data from the ACNH API
-        $.getJSON("https://acnhapi.com/v1/villagers")
-            .then(result => {
+    {
+        // Get API data about villagers
+        fetch("https://acnhapi.com/v1/villagers")
+            .then(res => res.json())
+            .then((result) => {
                 this.setState({
-                    color: this.state.color,
-                    data: result,
-                    rows: this.state.rows,
-                    found: this.state.rows
+                    isLoaded: true,
+                    APIData: result
+                })
             });
-        })
-            .then(result => this.manipulateData());
     }
 
     manipulateData()
     {
-        // Store the data in appropriate variables 
-        console.log("here " +  Object.keys(this.state.data).length);
-        for(var i = 0; i < Object.keys(this.state.data).length; i++)
+        // Manipulate API Data
+        var villagerRows = [];
+        for(var i = 0; i < Object.keys(this.state.APIData).length; i++)
         {
-            var index = Object.keys(this.state.data)[i];
+            var index = Object.keys(this.state.APIData)[i];
 
-            var image = this.state.data[index]['icon_uri'];
+            var image = this.state.APIData[index]['icon_uri'];
+            var species = this.state.APIData[index]['species'];
+            var personality = this.state.APIData[index]['personality'];
+            var birthday = this.state.APIData[index]['birthday-string'];
+            var catchPhrase = this.state.APIData[index]['catch-phrase'];
 
             // Format name
-            var name = this.state.data[index]['name']['name-USen'].replace('_', ' ').split(" ");
+            var name = this.state.APIData[index]['name']['name-USen'].replace('_', ' ').split(" ");
 
             for(let i = 0; i < name.length; i++)
             {
                 name[i] = name[i][0].toUpperCase() + name[i].substring(1) + " ";
             }
 
-            var species = this.state.data[index]['species'];
-            var personality = this.state.data[index]['personality'];
-            var birthday = this.state.data[index]['birthday-string'];
-            var catchPhrase = this.state.data[index]['catch-phrase'];
-
-            // Create and format a row HTML element
-            var rowHtml = this.createRow(image, name, species, personality, birthday, catchPhrase);
-
-            // Create a Row object to store name (for searching) and row HTML
-            var row = new Row(name, species, rowHtml);
-
-            // Save row to this.state.rows, and update this.state.found
-            var allRows = this.state.rows;
-            allRows.push(row);
-            this.setState({
-                color: this.state.color,
-                data: this.state.data,
-                rows: allRows,
-                found: allRows
-            });
+            var villager = new Villager(image, name, species, personality, birthday, catchPhrase);
+            var row = new Row(villager);
+            
+            villagerRows.push(row);
         }
-        this.sortByName();
+
+        // Sort villagers by name
+        // (We don't use this.sortByNames() here because that function updates this.state.filteredResults and not also this.state.results)
+        villagerRows = villagerRows.sort(function(a, b) {
+            var nameA = a.villager.name[0].toUpperCase();
+            var nameB = b.villager.name[0].toUpperCase();
+            return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+        });
+
+        // Update component state
+        this.setState({
+            results: villagerRows,
+            filteredResults: villagerRows
+        });
     }
 
-    createRow(image, name, species, personality, birthday, catchPhrase)
+    search(e)
     {
-        // Creat an HTML row element with proper formating
-        return(
-            <div className={`${styles.row}`}>
-                <div src={styles.image}>
-                    <img src={image} alt={name} style={{'--color': this.state.color}} />
-                </div>
-                <h1>{name}</h1>
-                <h1>{species}</h1>
-                <h1>{personality}</h1>
-                <h1>{birthday}</h1>
-                <h1>{catchPhrase}</h1>
-            </div>
-        )
-    }
-
-    search = (e) =>
-    {
-        // Search for a villager based on name keyword
         const keyword = e.target.value;
-        if(keyword != '')
+        console.log(e.target.value);
+
+        if(speciesOptions.some(e => e.label.toLowerCase() === keyword.toLowerCase()))
         {
-            var allRows = this.state.rows;
-            const results = allRows.filter((row) => {
-                return row.name[0].toLowerCase().startsWith(keyword.toLowerCase());
+            const searchResults = this.state.results.filter((result) => result.villager.species.toLowerCase() === keyword.toLowerCase());
+            this.setState({
+                filteredResults: searchResults
+            });
+            return;
+        }
+        if(keyword !== '')
+        {
+            const searchResults = this.state.results.filter((result) => {
+                return result.villager.name[0].toLowerCase().startsWith(keyword.toLowerCase());
             });
             this.setState({
-                found: results
-            })
+                filteredResults: searchResults
+            });
         }
         else
         {
             this.setState({
-                found: this.state.rows
-            })
+                filteredResults: this.state.results
+            });
         }
+    }
+
+    toggleFilter()
+    {
+        var filter = document.getElementById('filter');
+        if(filter.classList.contains(`${styles.hide}`))
+            filter.classList.remove(`${styles.hide}`);
+        else
+            filter.classList.add(`${styles.hide}`);
+    }
+
+    filter(e)
+    {
+        // Update state based on entry type
+        var selectSpecies = "Species";
+        var selectPersonalities = "Personality";
+
+        if(speciesOptions.includes(e))
+            selectSpecies = e.label;
+        if(personalitiesOptions.includes(e))
+            selectPersonalities = e.label;
+
+        var filtered = []
+        this.state.results.map((result) => {
+            // If a duplicate doesn't exist in the filtered rows list, AND the row we're added includes a filtered keyword, add that row to the filtered rows list
+            if(!filtered.includes(result) && (selectSpecies === result.villager.species || selectPersonalities === result.villager.personality))
+                filtered.push(result);
+        });
+
+        // Edge case
+        if(filtered.length === 0)
+        {
+            this.setState({
+                filteredRows: this.state.result,
+                species: selectSpecies,
+                personality: selectPersonalities
+            });
+            return;
+        }
+        else
+            this.setState({
+                filteredResults: filtered,
+                speciesValue: selectSpecies,
+                personalityValue: selectPersonalities
+            });
+    }
+
+    clearAll()
+    {
+        this.setState({
+            speciesValue: "Species",
+            personalityValue: "Personality"
+        });
+        this.sortByName();
     }
 
     sortByName()
     {
-        // Sort this.state.found by name
-        var sorted = this.state.found.sort(function(a, b) {
-            var nameA = a.name[0].toUpperCase();
-            var nameB = b.name[0].toUpperCase();
+        var sorted = this.state.results.sort(function(a, b) {
+            var nameA = a.villager.name[0].toUpperCase();
+            var nameB = b.villager.name[0].toUpperCase();
             return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
-        })
+        });
+
         this.setState({
-            color: this.state.color,
-            data: this.state.data,
-            rows: this.state.rows,
-            found: sorted
+            filteredResults: sorted
         });
     }
 
     sortBySpecies()
     {
-        // Sort this.state.found by species
-        var sorted = this.state.found.sort(function(a, b) {
-            var nameA = a.species[0].toUpperCase();
-            var nameB = b.species[0].toUpperCase();
+        var sorted = this.state.results.sort(function(a, b) {
+            var nameA = a.villager.species.toUpperCase();
+            var nameB = b.villager.species.toUpperCase();
             return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
-        })
+        });
+
         this.setState({
-            color: this.state.color,
-            data: this.state.data,
-            rows: this.state.rows,
-            found: sorted
+            filteredResults: sorted
+        });
+    }
+
+    sortByPersonalities()
+    {
+        var sorted = this.state.results.sort(function(a, b) {
+            var nameA = a.villager.personality.toUpperCase();
+            var nameB = b.villager.personality.toUpperCase();
+            return (nameA < nameB) ? -1 : (nameA > nameB) ? 1 : 0;
+        });
+
+        this.setState({
+            filteredResults: sorted
         });
     }
 
     render()
     {
-        if(this.state.data.length === 0)
+        if(this.state.isLoaded)
         {
+            // Manipulate data if this is the first time loading
+            if(this.state.results.length === 0)
+                this.manipulateData();
+            
             return(
                 <div className={styles.container}>
-                    Loading
+                <h1>Villagers</h1>
+                <h3 id={styles.tagline}>Get to know your villagers!</h3>
+                <div className={styles.cardsWrapper}>
+                    <div className={styles.card} id={styles.name} onClick={this.sortByName}>
+                        <h1 className={styles.title} id={styles.nameTitle}>Name</h1>
+                        <div className={styles.image}>
+                            <img src={Name} alt="Villager Icon - Search by name" />
+                        </div>
+                    </div>
+                    <div className={styles.card} id={styles.species} onClick={this.sortBySpecies}>
+                        <h1 className={styles.title} id={styles.speciesTitle}>Species</h1>
+                        <div className={styles.image}>
+                            <img src={Species} alt="Villager Icon - Search by species" />
+                        </div>
+                    </div>
+                    <div className={styles.card} id={styles.personality} onClick={this.sortByPersonalities}>
+                        <h1 className={styles.title} id={styles.personalityTitle}>Personality</h1>
+                        <div className={styles.image}>
+                            <img src={Personality} alt="Villager Icon - Search by personality" />
+                        </div>
+                    </div>
                 </div>
+                <h3>Search by name, species or personality</h3>
+                <h3 id={styles.tagline}>or scroll down to view a list of all villagers!</h3>
+                <div className={styles.section}>
+                    {/* Header with Search Bar and Filter */}
+                    <div className={styles.header}>
+                        <h1>Villagers</h1>
+                        <div className={styles.searchWrapper}>
+                            <input className={styles.searchBar} type="text" placeholder="Search name, species..." onChange={this.search}/>
+                            <div className={styles.image}>
+                                <span className={`${'iconify'} ${styles.iconify}`} data-icon="bx:search" data-width="32"></span>
+                            </div>
+                            <h2 onClick={this.toggleFilter}>Filter</h2>
+                        </div>
+                    </div>
+                    <div className={`${styles.filterWrapper} ${styles.hide}`} id='filter'>
+                        <div className={styles.filter}>
+                            <div className={styles.filterItem}>
+                                <Select isSearchable options={speciesOptions} value={this.state.speciesValue} styles={this.customStyle} placeholder={this.state.speciesValue} onChange={this.filter} />
+                            </div>
+                            <div className={styles.filterItem}>
+                                <Select isSearchable options={personalitiesOptions} value={this.state.personalityValue} styles={this.customStyle} placeholder={this.state.personalityValue} onChange={this.filter} />
+                            </div>
+                        </div>
+                        <div className={styles.clear}>
+                            <h2 onClick={this.clearAll}>Clear All</h2>
+                        </div>
+                    </div>
+                    {/* Column Names Row */}
+                    <div className={`${styles.row}`} id={styles.names}>
+                        <h1>Image</h1>
+                        <h1 id={styles.sort} onClick={this.sortByName}>Name</h1>
+                        <h1 id={styles.sort} onClick={this.sortBySpecies}>Species</h1>
+                        <h1 id={styles.sort} onClick={this.sortByPersonalities}>Personality</h1>
+                        <h1>Birthday</h1>
+                        <h1>Catch Phrase</h1>
+                    </div>
+                    {/* Data Rows */}
+                    <div className={styles.resultsWrapper}>
+                        {this.state.filteredResults.map((result) => (result.html))}
+                    </div>
+                </div>
+            </div>
             );
         }
         else
         {
-            var rows = [];
-            for(let row of this.state.found)
-                rows.push(row.html);
-
-            if(rows.length === 0)
-                rows.push(
-                    <h3>Could not find a match.</h3>
-                );
-
             return(
-                <div className={styles.container}>
-                    <div className={styles.section}>
-                        {/* Header with Search Bar */}
-                        <div className={styles.header}>
-                            <h1>Villagers</h1>
-                            <div className={styles.searchWrapper}>
-                                <input className={styles.searchBar} type="text" placeholder="Search a name..." onChange={this.search}/>
-                                <div className={styles.image}>
-                                    <span className={`${'iconify'} ${styles.iconify}`} data-icon="bx:search" data-width="32"></span>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Column Names Row */}
-                        <div className={`${styles.row}`} id={styles.names}>
-                            <h1>Image</h1>
-                            <h1>Name</h1>
-                            <h1 onClick={this.sortBySpecies}>Species</h1>
-                            <h1>Personality</h1>
-                            <h1>Birthday</h1>
-                            <h1>Catch Phrase</h1>
-                        </div>
-                        {/* Data Rows */}
-                        {rows}
-                    </div>
+                <div className={styles.container} id={styles.loader}>
+                    <img src={Loader} alt="Animal Crossing Island loader" />
                 </div>
             );
         }

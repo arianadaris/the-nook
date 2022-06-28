@@ -1,0 +1,10 @@
+[
+    {
+        "value": 1,
+        "label": "Lowest to Highest"
+    },
+    {
+        "value": 2,
+        "label": "Highest to Lowest"
+    }
+]

@@ -1,0 +1,54 @@
+[
+    {
+        "value": 1,
+        "label": "All Day"
+    },
+    {
+        "value": 2,
+        "label": "8am - 5pm"
+    },
+    {
+        "value": 3,
+        "label": "7pm - 4am"
+    },
+    {
+        "value": 4,
+        "label": "5pm - 8am"
+    },
+    {
+        "value": 5,
+        "label": "4pm - 11pm"
+    },
+    {
+        "value": 6,
+        "label": "8am - 7pm"
+    },
+    {
+        "value": 7,
+        "label": "4am - 7pm"
+    },
+    {
+        "value": 8,
+        "label": "4am - 8am & 4pm - 7pm"
+    },
+    {
+        "value": 9,
+        "label": "7pm - 8am"
+    },
+    {
+        "value": 10,
+        "label": "11pm - 8am"
+    },
+    {
+        "value": 11,
+        "label": "4am - 5pm"
+    },
+    {
+        "value": 12,
+        "label": "11pm - 4pm"
+    },
+    {
+        "value": 13,
+        "label": "4am - 8am & 5pm - 7pm"
+    }
+]

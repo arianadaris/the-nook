@@ -1,0 +1,142 @@
+[
+    {
+        "value": 1,
+        "label": "Alligator"
+    },
+    {
+        "value": 2,
+        "label": "Anteater"
+    },
+    {
+        "value": 3,
+        "label": "Bear"
+    },
+    {
+        "value": 4,
+        "label": "Bird"
+    },
+    {
+        "value": 5,
+        "label": "Bull"
+    },
+    {
+        "value": 6,
+        "label": "Cat"
+    },
+    {
+        "value": 7,
+        "label": "Chicken"
+    },
+    {
+        "value": 8,
+        "label": "Cow"
+    },
+    {
+        "value": 9,
+        "label": "Cub"
+    },
+    {
+        "value": 10,
+        "label": "Deer"
+    },
+    {
+        "value": 11,
+        "label": "Dog"
+    },
+    {
+        "value": 12,
+        "label": "Duck"
+    },
+    {
+        "value": 13,
+        "label": "Eagle"
+    },
+    {
+        "value": 14,
+        "label": "Elephant"
+    },
+    {
+        "value": 15,
+        "label": "Frog"
+    },
+    {
+        "value": 16,
+        "label": "Goat"
+    },
+    {
+        "value": 17,
+        "label": "Gorilla"
+    },
+    {
+        "value": 18,
+        "label": "Hamster"
+    },
+    {
+        "value": 19,
+        "label": "Hippo"
+    },
+    {
+        "value": 20,
+        "label": "Horse"
+    },
+    {
+        "value": 21,
+        "label": "Kangaroo"
+    },
+    {
+        "value": 22,
+        "label": "Koala"
+    },
+    {
+        "value": 23,
+        "label": "Lion"
+    },
+    {
+        "value": 24,
+        "label": "Monkey"
+    },
+    {
+        "value": 25,
+        "label": "Mouse"
+    },
+    {
+        "value": 26,
+        "label": "Octopus"
+    },
+    {
+        "value": 27,
+        "label": "Ostrich"
+    },
+    {
+        "value": 28,
+        "label": "Penguin"
+    },
+    {
+        "value": 29,
+        "label": "Pig"
+    },
+    {
+        "value": 30,
+        "label": "Rabbit"
+    },
+    {
+        "value": 31,
+        "label": "Rhino"
+    },
+    {
+        "value": 32,
+        "label": "Sheep"
+    },
+    {
+        "value": 33,
+        "label": "Squirrel"
+    },
+    {
+        "value": 34,
+        "label": "Tiger"
+    },
+    {
+        "value": 35,
+        "label": "Wolf"
+    }
+]

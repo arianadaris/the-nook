@@ -1,0 +1,34 @@
+[
+    {
+        "value": 1,
+        "label": "Sea"
+    },
+    {
+        "value": 2,
+        "label": "River"
+    },
+    {
+        "value": 3,
+        "label": "Pier"
+    },
+    {
+        "value": 4,
+        "label": "Pond"
+    },
+    {
+        "value": 5,
+        "label": "River (Clifftop)"
+    },
+    {
+        "value": 6,
+        "label": "River (Clifftop) & Pond"
+    },
+    {
+        "value": 7,
+        "label": "Sea (when raining or snowing)"
+    },
+    {
+        "value": 8,
+        "label": "River (Mouth)"
+    }
+]

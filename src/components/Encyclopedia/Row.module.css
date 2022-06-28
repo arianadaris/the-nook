@@ -14,6 +14,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    overflow: visible;
 }
 
 .container h1
@@ -72,36 +73,6 @@
     margin-bottom: 2rem;
 }
 
-#name
-{
-    background-color: #FEF8FF;
-}
-
-#nameTitle
-{
-    background-color: #F2D7F6;
-}
-
-#species
-{
-    background-color: #F2FFF7;
-}
-
-#speciesTitle
-{
-    background-color: #CCF4DB;
-}
-
-#personality
-{
-    background-color: #F6FEFF;
-}
-
-#personalityTitle
-{
-    background-color: #BDE9F2;
-}
-
 .section
 {
     width: 50%;
@@ -146,9 +117,24 @@
     padding: 0.5rem 1rem;
 }
 
-.searchWrapper input[type=text]:focus
+#sea .searchWrapper input[type=text]:focus
 {
-    outline: 2px solid #F7D359;
+    outline: 2px solid #F0BBF8;
+}
+
+#fish .searchWrapper input[type=text]:focus
+{
+    outline: 2px solid #A1DAE5;
+}
+
+#bug .searchWrapper input[type=text]:focus
+{
+    outline: 2px solid #A2E7BC;
+}
+
+#fossil .searchWrapper input[type=text]:focus
+{
+    outline: 2px solid #A2B2EB;
 }
 
 .searchWrapper ::placeholder
@@ -199,6 +185,11 @@
     margin-left: 1rem;
 }
 
+#fossil .row, #fossil #names
+{
+    grid-template-columns: repeat(4, 1fr);
+}
+
 .row h1
 {
     font-size: 1rem;
@@ -247,6 +238,7 @@
 {
     display: flex;
     align-items: center;
+    height: fit-content;
 }
 
 .filterItem
@@ -296,7 +288,7 @@
 
 .hide
 {
-    display: none;
+
     transition: 0.3s all ease;
 }
 
@@ -322,8 +314,68 @@
 
 #loader img
 {
-    max-height: 15rem;
-    max-width: 15rem;
+    max-height: 7rem;
+    max-width: 7rem;
     height: auto;
     width: auto;
+}
+
+#sea .header, #sea .filterWrapper
+{
+    background-color: #FEF8FF;
+}
+
+#sea .searchBar, #sea .iconify
+{
+    background-color: #F2D7F6;
+}
+
+#sea h2
+{
+    color: #F0BBF8;
+}
+
+#fish .header, #fish .filterWrapper
+{
+    background-color: #F6FEFF;
+}
+
+#fish .searchBar, #fish .iconify
+{
+    background-color: #BDE9F2;
+}
+
+#fish h2
+{
+    color: #A1DAE5;
+}
+
+#bug .header, #bug .filterWrapper
+{
+    background-color: #F2FFF7;
+}
+
+#bug .searchBar, #bug .iconify
+{
+    background-color: #CCF4DB;
+}
+
+#bug h2
+{
+    color: #A2E7BC;
+}
+
+#fossil .header, #fossil .filterWrapper
+{
+    background-color: #F3F5FF;
+}
+
+#fossil .searchBar, #fossil .iconify
+{
+    background-color: #D0D9F9;
+}
+
+#fossil h2
+{
+    color: #A2B2EB;
 }

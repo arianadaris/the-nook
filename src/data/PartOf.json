@@ -1,0 +1,142 @@
+[
+    {
+        "value": 1,
+        "label": "Acanthostega"
+    },
+    {
+        "value": 2,
+        "label": "Amber"
+    },
+    {
+        "value": 3,
+        "label": "Ammonite"
+    },
+    {
+        "value": 4,
+        "label": "Ankylosaurus"
+    },
+    {
+        "value": 5,
+        "label": "Anomalocaris"
+    },
+    {
+        "value": 6,
+        "label": "Archaeopteryx"
+    },
+    {
+        "value": 7,
+        "label": "Archelon"
+    },
+    {
+        "value": 8,
+        "label": "Australopith"
+    },
+    {
+        "value": 9,
+        "label": "Brachiosaurus"
+    },
+    {
+        "value": 10,
+        "label": "Coprolite"
+    },
+    {
+        "value": 11,
+        "label": "Deinonychus"
+    },
+    {
+        "value": 12,
+        "label": "Dimetrodon"
+    },
+    {
+        "value": 13,
+        "label": "Dinosaur track"
+    },
+    {
+        "value": 14,
+        "label": "Diplodocus"
+    },
+    {
+        "value": 15,
+        "label": "Dunkleosteus"
+    },
+    {
+        "value": 16,
+        "label": "Eusthenopteron"
+    },
+    {
+        "value": 17,
+        "label": "Iguanodon"
+    },
+    {
+        "value": 18,
+        "label": "Juramaia"
+    },
+    {
+        "value": 19,
+        "label": "Megaloceros"
+    },
+    {
+        "value": 20,
+        "label": "Pteranodon"
+    },
+    {
+        "value": 21,
+        "label": "Quetzalcoatlus"
+    },
+    {
+        "value": 22,
+        "label": "Mammoth"
+    },
+    {
+        "value": 23,
+        "label": "Megacerops"
+    },
+    {
+        "value": 24,
+        "label": "Myllokunmingia"
+    },
+    {
+        "value": 25,
+        "label": "Ophthalmosaurus"
+    },
+    {
+        "value": 26,
+        "label": "Pachycephalosaurus"
+    },
+    {
+        "value": 27,
+        "label": "Parasaurolophus"
+    },
+    {
+        "value": 28,
+        "label": "Plesiosaurus"
+    },
+    {
+        "value": 29,
+        "label": "Sabertooth Tiger"
+    },
+    {
+        "value": 30,
+        "label": "Shark-tooth pattern"
+    },
+    {
+        "value": 31,
+        "label": "Spinosaurus"
+    },
+    {
+        "value": 32,
+        "label": "Stegosaurus"
+    },
+    {
+        "value": 33,
+        "label": "T. Rex"
+    },
+    {
+        "value": 34,
+        "label": "Triceratops"
+    },
+    {
+        "value": 35,
+        "label": "Trilobite"
+    }
+]

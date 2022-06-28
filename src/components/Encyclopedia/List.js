@@ -5,88 +5,59 @@ import styles from './List.module.css';
 
 import { ReactComponent as Arrow } from '../../assets/Arrow.svg';
 
-import Fish from '../Data/Fish';
-import Sea from '../Data/Sea';
-import Bugs from '../Data/Bug';
-import Fossils from '../Data/Fossil';
+import SeaList from './SeaList';
+import FishList from './FishList';
+import BugList from './BugList';
+import FossilList from './FossilList';
 
-function List()
+import SeaIcon from '../../assets/Icon_SeaCreatures.png';
+import FishIcon from '../../assets/Icon_Fish.png';
+import BugIcon from '../../assets/Icon_Bugs.png';
+import FossilIcon from '../../assets/Icon_Fossils.png';
+
+class List extends React.Component
 {
-    const sections = useRef(null);
-    sections.current = [];
-
-    const addToSections = (el) => {
-        if(el && !sections.current.includes(el))
-        {
-            sections.current.push(el);
-        }
-        console.log(sections.current);
-    }
-
-    const toggle = (el) => {
-        // Change header color
-        if(!el.classList.contains(`${styles.open}`))
-        {
-            el.classList.add(`${styles.open}`);
-        }
-        else
-        {
-            el.classList.remove(`${styles.open}`);
-        }
-        console.log(el.classList);
-
-        // Show/hide rows
-        var rows = el.getElementsByTagName('div');
-        for (let row of rows)
-        {
-            if(!row.classList.contains(`${styles.header}`))
-            {
-                if(!row.classList.contains(`${styles.hide}`))
-                {
-                    row.classList.add(`${styles.hide}`);
-                }
-                else
-                {
-                    row.classList.remove(`${styles.hide}`);
-                }
-            }
-        }
-    }
-
-    return (
-        <div className={styles.container}>
-            <div className={styles.sectionWrapper}>
-                <div className={`${styles.section}`} ref={addToSections}>
-                    <div className={`${styles.header} ${styles.sea}`} onClick={() => toggle(sections.current[0])}>
-                        <h1>Sea Creatures</h1>
-                        <Arrow className={`${styles.arrow} ${styles.seaArrow}`} />
-                    </div>
-                    <Sea />
+    render()
+    {
+        return (
+            <div className={styles.container}>
+                <h1>Encyclopedia</h1>
+                <h3 id={styles.tagline}>Learn about all of the museum items!</h3>
+                <div className={styles.cardsWrapper}>
+                    <a href="#sea-list" className={styles.card} id={styles.sea}><div>
+                        <h1 className={styles.title} id={styles.seaTitle}>Sea Creatures</h1>
+                        <div className={styles.image}>
+                            <img src={SeaIcon} alt="Encyclopedia Icon - Sea Creatures" />
+                        </div>
+                    </div></a>
+                    <a href="#fish-list" className={styles.card} id={styles.fish}><div >
+                        <h1 className={styles.title} id={styles.fishTitle}>Fish</h1>
+                        <div className={styles.image}>
+                            <img src={FishIcon} alt="Encyclopedia Icon - Fish" />
+                        </div>
+                    </div></a>
+                    <a href="#bug-list" className={styles.card} id={styles.bug}><div>
+                        <h1 className={styles.title} id={styles.bugTitle}>Bugs</h1>
+                        <div className={styles.image}>
+                            <img src={BugIcon} alt="Encyclopedia Icon - Bug" />
+                        </div>
+                    </div></a>
+                    <a href="#fossil-list" className={styles.card} id={styles.fossil}><div>
+                        <h1 className={styles.title} id={styles.fossilTitle}>Fossils</h1>
+                        <div className={styles.image}>
+                            <img src={FossilIcon} alt="Encyclopedia Icon - Fossils" />
+                        </div>
+                    </div></a>
                 </div>
-                <div className={`${styles.section} ${styles.open}`} ref={addToSections}>
-                    <div className={`${styles.header} ${styles.fish}`} onClick={() => toggle(sections.current[1])}>
-                        <h1>Fish</h1>
-                        <Arrow className={`${styles.arrow} ${styles.fishArrow}`} />
-                    </div>
-                    <Fish />
-                </div>
-                <div className={`${styles.section} ${styles.open}`} ref={addToSections}>
-                    <div className={`${styles.header} ${styles.bug}`} onClick={() => toggle(sections.current[2])}>
-                        <h1>Bugs</h1>
-                        <Arrow className={`${styles.arrow} ${styles.bugArrow}`} />
-                    </div>
-                    <Bugs />
-                </div>
-                <div className={`${styles.section} ${styles.open}`} ref={addToSections}>
-                    <div className={`${styles.header} ${styles.fossil}`} onClick={() => toggle(sections.current[3])}>
-                        <h1>Fossils</h1>
-                        <Arrow className={`${styles.arrow} ${styles.fossilArrow}`} />
-                    </div>
-                    <Fossils />
-                </div>
+                <h3>Search by sea creatures, fish, bugs, and fossils</h3>
+                <h3 id={styles.tagline}>or scroll down to view a list of all museum items!</h3>
+                <SeaList styles={{marginTop: '3rem'}} />
+                <FishList styles={{marginTop: '3rem'}} />
+                <BugList styles={{marginTop: '3rem'}} />
+                <FossilList styles={{marginTop: '3rem'}} />
             </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default List;

@@ -122,3 +122,18 @@
 {
     background-color: #BDE9F2;
 }
+
+#api a
+{
+    color: #2AA1F1;
+}
+
+#api a:hover
+{
+    text-decoration: underline;
+}
+
+#apiText
+{
+    margin-top: -1.75rem;
+}

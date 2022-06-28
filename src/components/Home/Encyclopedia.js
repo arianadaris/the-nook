@@ -20,7 +20,7 @@ function Encyclopedia()
                     </div>
                     <h3>Dive in and learn about the underwater critters!</h3>
                     <div className={styles.buttonWrapper}>
-                        <a href="/about">Learn more!</a>
+                        <a href="/encyclopedia">Learn more!</a>
                         <div className={styles.hover} />
                     </div>
                 </div>
@@ -31,7 +31,7 @@ function Encyclopedia()
                     </div>
                     <h3>Get to know the river and ocean fish!</h3>
                     <div className={styles.buttonWrapper}>
-                        <a href="/about">Learn more!</a>
+                        <a href="/encyclopedia">Learn more!</a>
                         <div className={styles.hover} />
                     </div>
                 </div>
@@ -42,7 +42,7 @@ function Encyclopedia()
                     </div>
                     <h3>Find out why Blathers hates insects!</h3>
                     <div className={styles.buttonWrapper}>
-                        <a href="/about">Learn more!</a>
+                        <a href="/encyclopedia">Learn more!</a>
                         <div className={styles.hover} />
                     </div>
                 </div>
@@ -53,7 +53,7 @@ function Encyclopedia()
                     </div>
                     <h3>Reveal information about what you dig up!</h3>
                     <div className={styles.buttonWrapper}>
-                        <a href="/about">Learn more!</a>
+                        <a href="/encyclopedia">Learn more!</a>
                         <div className={styles.hover} />
                     </div>
                 </div>

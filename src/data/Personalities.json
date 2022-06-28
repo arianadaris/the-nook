@@ -1,0 +1,34 @@
+[
+    {
+        "value": 1,
+        "label": "Cranky"
+    },
+    {
+        "value": 2,
+        "label": "Jock"
+    },
+    {
+        "value": 3,
+        "label": "Lazy"
+    },
+    {
+        "value": 4,
+        "label": "Normal"
+    },
+    {
+        "value": 5,
+        "label": "Peppy"
+    },
+    {
+        "value": 6,
+        "label": "Sisterly"
+    },
+    {
+        "value": 7,
+        "label": "Smug"
+    },
+    {
+        "value": 8,
+        "label": "Snooty"
+    }
+]

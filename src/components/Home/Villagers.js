@@ -25,21 +25,21 @@ function Villagers()
                     <div className={styles.card}>
                         <img src={SearchName} alt="Villagers - Search by Name" />
                         <div className={styles.buttonWrapper}>
-                            <a href="/about">Name</a>
+                            <a href="/villagers">Name</a>
                             <div className={styles.hover} />
                         </div>
                     </div>
                     <div className={styles.card}>
                         <img src={SearchSpecies} alt="Villagers - Search by species" />
                         <div className={styles.buttonWrapper}>
-                            <a href="/about">Species</a>
+                            <a href="/villagers">Species</a>
                             <div className={styles.hover} />
                         </div>
                     </div>
                     <div className={styles.card}>
                         <img src={SearchPersonality} alt="Villagers - Search by Personality" />
                         <div className={styles.buttonWrapper}>
-                            <a href="/about">Personality</a>
+                            <a href="/villagers">Personality</a>
                             <div className={styles.hover} />
                         </div>
                     </div>
